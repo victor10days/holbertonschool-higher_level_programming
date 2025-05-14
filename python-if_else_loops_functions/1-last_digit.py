@@ -16,4 +16,3 @@ elif last_digit == 0:
     print(f"{str} {number} {str2} {last_digit} {str4}")
 else:
     print(f"{str} {number} {str2} {last_digit} {str5}")
-    
