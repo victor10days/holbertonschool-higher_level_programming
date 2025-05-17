@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
-    """Prints a matrix of integers."""
     for row in matrix:
-        print(" ".join("{:d}".format(i) for i in row))
+        for idx, num in enumerate(row):
+            end_char = " " if idx < len(row) - 1 else ""
+            print("{:d}".format(num), end=end_char)
+        print()
