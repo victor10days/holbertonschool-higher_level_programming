@@ -76,7 +76,3 @@ class Square:
                 print('#' * self.__size)
             print()
     
-    def __del__(self):
-        """Print a message when the square is deleted."""
-        print("Bye square...")
-        
