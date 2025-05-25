@@ -36,3 +36,11 @@ class Square:
             int: The size of the square object in bytes.
         """
         return super().__sizeof__() + self.__size.__sizeof__()
+
+    def size(self):
+        """Get the size of the square.
+
+        Returns:
+            int: The size of the square.
+        """
+        return self.__size
