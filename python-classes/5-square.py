@@ -67,11 +67,10 @@ class Square:
         """
         return f"Square(size={self.__size})"
     
-    def my_print(self):
-        """Print the square using the '#' character."""
-        if self.__size == 0:
-            print()
-        else:
-            for i in range(self.__size):
-                print('#' * self.__size)
-            print()
+def my_print(self):
+    """Print the square using the '#' character."""
+    if self.__size == 0:
+        print()
+    else:
+        for _ in range(self.__size):
+            print('#' * self.__size)
