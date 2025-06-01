@@ -1,0 +1,15 @@
+BaseGeometry().area()
+Exception: area() is not implemented
+
+BaseGeometry().integer_validator("age", 5)
+
+BaseGeometry().integer_validator("age", -5)
+Exception: age must be greater than 0
+
+BaseGeometry().integer_validator("age", "five")
+Exception: age must be an integer
+
+BaseGeometry().integer_validator("height", 0)
+Exception: height must be greater than 0
+
+BaseGeometry().integer_validator("height", 10)
