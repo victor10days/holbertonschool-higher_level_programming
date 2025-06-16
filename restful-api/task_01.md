@@ -1,63 +1,80 @@
-### 📌 Summary: HTTP vs HTTPS
+## ✅ Task 1: Consume Data from an API Using Command Line Tools (`curl`)
 
-| Feature      | HTTP                                      | HTTPS                                       |
-|--------------|-------------------------------------------|---------------------------------------------|
-| Security     | Not secure                                | Secure via SSL/TLS encryption               |
-| Port         | 80                                        | 443                                         |
-| URL Prefix   | `http://`                                 | `https://`                                  |
-| Encryption   | None                                      | Encrypts data in transit                    |
-| Use Case     | Public websites with no sensitive content | Login forms, payments, user data, etc.      |
-| Browser Info | Shows as “Not Secure”                     | Shows padlock symbol (🔒) in address bar     |
+### ✅ Step-by-Step Instructions
+
+#### ✅ 1. Check if `curl` is installed
+
+```bash
+curl --version
+```
+
+> Should show version details like `curl 7.68.0`.
 
 ---
 
-### 📌 Structure of an HTTP Request & Response
+#### ✅ 2. Fetch a simple webpage
 
-#### ✅ Example: Request
-
-```
-GET /api/users HTTP/1.1
-Host: example.com
-User-Agent: curl/7.68.0
-Accept: application/json
+```bash
+curl http://example.com
 ```
 
-#### ✅ Example: Response
+> Output: HTML content of the page.
 
+---
+
+#### ✅ 3. Fetch data from an API
+
+```bash
+curl https://jsonplaceholder.typicode.com/posts
 ```
-HTTP/1.1 200 OK
-Content-Type: application/json
-Date: Sun, 15 Jun 2025 17:20:00 GMT
 
+> Output: JSON array of posts like:
+
+```json
 [
   {
+    "userId": 1,
     "id": 1,
-    "name": "Alice"
+    "title": "sunt aut facere repellat...",
+    "body": "quia et suscipit..."
   }
 ]
 ```
 
 ---
 
-### 📌 Common HTTP Methods
+#### ✅ 4. Get only headers
 
-| Method | Description           | Use Case Example          |
-|--------|------------------------|----------------------------|
-| GET    | Retrieve data         | `GET /users`              |
-| POST   | Create a new resource | `POST /users` with data   |
-| PUT    | Update resource       | `PUT /users/5`            |
-| DELETE | Remove a resource     | `DELETE /users/5`         |
+```bash
+curl -I https://jsonplaceholder.typicode.com/posts
+```
+
+> Output:
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Cache-Control: public, max-age=14400
+...
+```
 
 ---
 
-### 📌 Common HTTP Status Codes
+#### ✅ 5. Make a POST request
 
-| Code | Meaning                  | Scenario                                      |
-|------|--------------------------|----------------------------------------------|
-| 200  | OK                       | Request succeeded (GET)                      |
-| 201  | Created                  | POST created a new resource                  |
-| 400  | Bad Request              | Malformed request                            |
-| 404  | Not Found                | Resource not found                           |
-| 500  | Internal Server Error    | Server-side problem                          |
+```bash
+curl -X POST -d "title=foo&body=bar&userId=1" https://jsonplaceholder.typicode.com/posts
+```
+
+> Output:
+
+```json
+{
+  "title": "foo",
+  "body": "bar",
+  "userId": "1",
+  "id": 101
+}
+```
 
 ---
