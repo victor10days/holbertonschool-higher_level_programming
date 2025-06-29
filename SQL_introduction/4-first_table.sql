@@ -3,3 +3,4 @@ CREATE TABLE IF NOT EXISTS first_table (
     name VARCHAR(255) NOT NULL,
     age INT NOT NULL
 );
+-- This command creates a table named first_table with three columns:
