@@ -1,0 +1,12 @@
+Blog post URL: [To be published on Medium/LinkedIn]
+LinkedIn post URL: [To be shared after publication]
+
+Note: The comprehensive blog post has been written and saved as 29-blog_post.md in this directory. It covers all required topics:
+- Introduction
+- id() and type() functions
+- Mutable vs Immutable objects
+- Object identity vs equality
+- How Python passes arguments to functions
+- Real-world implications and best practices
+- Code examples throughout
+- Professional formatting for Medium/LinkedIn publication
