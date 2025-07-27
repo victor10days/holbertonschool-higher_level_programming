@@ -1,7 +1,5 @@
 # Python Objects: Understanding Identity, Mutability, and the Truth Behind "Everything is an Object"
 
-![Python Objects Visualization](https://miro.medium.com/v2/resize:fit:1400/1*7qfFz3VjFfW8eWy7p5Dviw.png)
-
 ## Introduction
 
 Python's philosophy states that "everything is an object," but what does this really mean for developers? This concept goes far beyond mere syntax—it fundamentally affects how variables behave, how memory is managed, and how your code executes. After diving deep into Python's object model through 29 practical exercises, I've discovered surprising behaviors that even experienced developers often misunderstand.
