@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 def remove_char_at(str, n):
     """Function that removes a character at a specific index in a string.
 
