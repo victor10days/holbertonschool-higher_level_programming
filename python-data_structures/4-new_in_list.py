@@ -11,7 +11,7 @@ def new_in_list(my_list, idx, element):
 
     Returns:
         list: A new list with the specified element replaced, or a copy of
-              the original list if the index is out of range.
+            the original list if the index is out of range.
     """
     if idx < 0 or idx >= len(my_list):
         return my_list[:]
