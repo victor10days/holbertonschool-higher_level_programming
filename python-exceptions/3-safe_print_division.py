@@ -6,7 +6,7 @@ def safe_print_division(a, b):
         a (int): The numerator.
         b (int): The denominator.
     Returns:
-        float: The result of the division. If division by zero occurs, returns None.
+        float: The result of the division, or None if division by zero.
     """
     try:
         result = a / b
