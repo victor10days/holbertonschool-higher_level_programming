@@ -9,7 +9,7 @@ def list_division(my_list_1, my_list_2, list_length):
 
     Returns:
         list: A new list containing the results of the division. If division
-              cannot be performed for an element, the result is None for that element.
+            cannot be performed for an element, the result is None for that element.
     """
     result = []
     for i in range(list_length):
