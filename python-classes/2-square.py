@@ -7,7 +7,7 @@ class Square:
     """A class that defines a square."""
     pass
 
-    def __init__(self, size):
+    def __init__(self, size=0):
         """Initialize the square with a given size.
 
         Args:
