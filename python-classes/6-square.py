@@ -6,10 +6,11 @@ class Square:
     """A class that defines a square."""
 
     def __init__(self, size=0, position=(0, 0)):
-        """Initialize the square with a given size.
+        """Initialize the square with a given size and position.
 
         Args:
             size (int): The size of the square (default is 0).
+            position (tuple): The position of the square (default is (0, 0)).
         """
         self.size = size
         self.position = position
@@ -21,15 +22,7 @@ class Square:
 
     @size.setter
     def size(self, value):
-        """Set the size of the square with validation.
-
-        Args:
-            value (int): The new size of the square.
-
-        Raises:
-            TypeError: If value is not an int.
-            ValueError: If value < 0.
-        """
+        """Set the size of the square with validation."""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
@@ -43,39 +36,29 @@ class Square:
 
     @position.setter
     def position(self, value):
-        """Set the position of the square with validation.
-
-        Args:
-            value (tuple): The new position of the square.
-
-        Raises:
-            TypeError: If value is not a tuple of 2 positive integers.
-        """
+        """Set the position of the square with validation."""
         if (not isinstance(value, tuple) or len(value) != 2 or
                 not all(isinstance(num, int) and num >= 0 for num in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
     def area(self):
-        """Calculate and return the area of the square.
-
-        Returns:
-            int: The area of the square.
-        """
+        """Calculate and return the area of the square."""
         return self.__size * self.__size
 
     def my_print(self):
-        """Print the square using the '#' character.
+        """Print the square using the '#' character with position offset.
+
         If size is 0, print an empty line.
         """
         if self.__size == 0:
-        print()
-        return
+            print()
+            return
 
-    # Vertical offset
-    for _ in range(self.__position[1]):
-        print()
+        # Vertical offset (position[1])
+        for _ in range(self.__position[1]):
+            print()
 
-    # Horizontal offset and square lines
-    for _ in range(self.__size):
-        print(" " * self.__position[0] + "#" * self.__size)
+        # Print each row with horizontal offset (position[0])
+        for _ in range(self.__size):
+            print(" " * self.__position[0] + "#" * self.__size)
