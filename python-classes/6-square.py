@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module defines a Square class with a size attribute."""
+"""This module defines a Square class with size and position attributes."""
 
 
 class Square:
@@ -66,7 +66,6 @@ class Square:
 
     def my_print(self):
         """Print the square using the '#' character.
-
         If size is 0, print an empty line.
         """
         if self.__size == 0:
