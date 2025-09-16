@@ -70,14 +70,13 @@ class Square:
         If size is 0, print an empty line.
         """
         if self.__size == 0:
-            print()
-            return
-        else:
-            for i in range(self.__size):
-                print("#" * self.__size)
+        print()
+        return
 
-        if self.__position[1] > 0:
-            for j in range(self.__position[1]):
-                print()
-        for i in range(self.__size):
-            print(" " * self.__position[0] + "#" * self.__size)
+    # Vertical offset
+    for _ in range(self.__position[1]):
+        print()
+
+    # Horizontal offset and square lines
+    for _ in range(self.__size):
+        print(" " * self.__position[0] + "#" * self.__size)
