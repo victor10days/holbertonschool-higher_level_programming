@@ -64,3 +64,22 @@ class Square:
             print(" " * self.__position[0], end="")
             # Print the square row
             print("#" * self.__size)
+
+    def __str__(self):
+        """Return string representation of the square."""
+        if self.__size == 0:
+            return ""
+
+        lines = []
+
+        # Vertical offset (position[1])
+        for _ in range(self.__position[1]):
+            lines.append("")
+
+        # Build each row of the square
+        for _ in range(self.__size):
+            # Horizontal offset (position[0]) + square row
+            line = " " * self.__position[0] + "#" * self.__size
+            lines.append(line)
+
+        return "\n".join(lines)
