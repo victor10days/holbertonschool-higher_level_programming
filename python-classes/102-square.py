@@ -42,3 +42,37 @@ class Square:
 
         for _ in range(self.__size):
             print("#" * self.__size)
+
+    def __eq__(self, other):
+        """Check if two squares are equal based on their area."""
+        if isinstance(other, Square):
+            return self.area() == other.area()
+        return False
+
+    def __ne__(self, other):
+        """Check if two squares are not equal based on their area."""
+        return not self.__eq__(other)
+
+    def __lt__(self, other):
+        """Check if this square is less than another based on area."""
+        if isinstance(other, Square):
+            return self.area() < other.area()
+        return NotImplemented
+
+    def __le__(self, other):
+        """Check if this square is less than or equal to another."""
+        if isinstance(other, Square):
+            return self.area() <= other.area()
+        return NotImplemented
+
+    def __gt__(self, other):
+        """Check if this square is greater than another based on area."""
+        if isinstance(other, Square):
+            return self.area() > other.area()
+        return NotImplemented
+
+    def __ge__(self, other):
+        """Check if this square is greater than or equal to another."""
+        if isinstance(other, Square):
+            return self.area() >= other.area()
+        return NotImplemented
