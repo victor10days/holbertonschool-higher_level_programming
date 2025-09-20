@@ -6,6 +6,7 @@ class Rectangle:
     """Class that defines a rectangle."""
 
     number_of_instances = 0
+    print_symbol = "#"
     
     def __init__(self, width=0, height=0):
         """Initialize the rectangle with width and height.
@@ -60,7 +61,7 @@ class Rectangle:
         """Return a string representation of the rectangle"""
         if self.__width == 0 or self.__height == 0:
             return ""
-        return "\n".join(["#" * self.__width for _ in range(self.__height)])
+        return "\n".join([print_symbol * self.__width for _ in range(self.__height)])
 
     def __repr__(self):
         """Return eval() compatible representation"""
