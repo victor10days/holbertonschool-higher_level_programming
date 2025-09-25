@@ -1,0 +1,66 @@
+The ``BaseGeometry`` module
+==========================
+
+Using ``BaseGeometry``
+----------------------
+
+Importing the class:
+>>> BaseGeometry = __import__('6-base_geometry').BaseGeometry
+
+Creating and using BaseGeometry:
+>>> bg = BaseGeometry()
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+Testing class type:
+>>> bg = BaseGeometry()
+>>> type(bg)
+<class '6-base_geometry.BaseGeometry'>
+
+Testing isinstance:
+>>> bg = BaseGeometry()
+>>> isinstance(bg, BaseGeometry)
+True
+
+Testing class name:
+>>> bg = BaseGeometry()
+>>> bg.__class__.__name__
+'BaseGeometry'
+
+Testing docstring:
+>>> BaseGeometry.__doc__
+'Geometry class that defines area.'
+
+Testing area method docstring:
+>>> BaseGeometry.area.__doc__ is None
+True
+
+Testing multiple instances:
+>>> bg1 = BaseGeometry()
+>>> bg2 = BaseGeometry()
+>>> bg1.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+>>> bg2.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+Testing exception message:
+>>> bg = BaseGeometry()
+>>> try:
+...     bg.area()
+... except Exception as e:
+...     print(str(e))
+area() is not implemented
+
+Testing exception type:
+>>> bg = BaseGeometry()
+>>> try:
+...     bg.area()
+... except Exception as e:
+...     print(type(e).__name__)
+Exception
