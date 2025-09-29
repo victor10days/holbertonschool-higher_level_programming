@@ -2,20 +2,19 @@
 
 class CountedIterator:
     def __init__(self, iterable):
-        self._iterable = iterable
-        self._index = 0
-        self._length = len(iterable)
+        self.iterator = iter(iterable)
+        self.count = 0
 
     def __iter__(self):
         return self
 
     def __next__(self):
-        if self._index < self._length:
-            value = self._iterable[self._index]
-            self._index += 1
-            return value
-        else:
+        try:
+            item = next(self.iterator)
+            self.count += 1
+            return item
+        except StopIteration:
             raise StopIteration
 
-    def count(self):
-        return self._index
+    def get_count(self):
+        return self.count
