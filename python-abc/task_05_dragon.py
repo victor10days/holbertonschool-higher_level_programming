@@ -2,17 +2,12 @@
 
 class SwimMixin:
     def swim(self):
-        print ("The creature is swimming!")
+        print("The creature swims!")
 
 class FlyMixin:
     def fly(self):
-        print ("The creature is flying!")
+        print("The creature flies!")
 
 class Dragon(SwimMixin, FlyMixin):
     def roar(self):
-        print("The dragon is roaring!")
-
-dracon = Dragon()
-dracon.swim()
-dracon.fly()
-dracon.roar()
+        print("The dragon roars!")
