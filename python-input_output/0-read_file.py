@@ -1,9 +1,8 @@
 #!/usr/bin/python3
+"""Module for reading and printing file contents."""
 
-'''Reads a text file (UTF8) and prints it to sdtout'''
 
-
-def read_file(filename=''):
-	'''Opens file, reads it, and encodes it to utf-8'''
-    with open('my_file_0.txt', 'r', encoding='utf-8') as f:
+def read_file(filename=""):
+    """Reads a text file (UTF8) and prints it to stdout."""
+    with open(filename, 'r', encoding='utf-8') as f:
         print(f.read(), end='')
