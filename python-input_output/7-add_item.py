@@ -4,8 +4,8 @@
 
 from sys import argv
 import os.path
-from load_from_json_file import load_from_json_file
-from save_to_json_file import save_to_json_file
+from 6-load_from_json_file import load_from_json_file
+from 5-save_to_json_file import save_to_json_file
 
 
 def add_item(filename, items):
