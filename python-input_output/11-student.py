@@ -7,6 +7,7 @@ representation of a Student instance (same as 9-student.py).'''
 class Student:
     '''Student class that defines a student by: (based on 9-student.py)'''
 
+
     def __init__(self, first_name, last_name, age):
         '''Initializes a Student instance.'''
         self.first_name = first_name
