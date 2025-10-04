@@ -17,5 +17,9 @@ def add_item(filename, items):
     else:
         current_items = []
     current_items.extend(items)
-    save_to_json_file(current_items, filename)  
+    save_to_json_file(current_items, filename)
     return current_items
+
+
+if __name__ == '__main__':
+    add_item('add_item.json', argv[1:])
