@@ -15,9 +15,12 @@ class Student:
         '''Retrieves a dictionary representation of a Student instance.'''
         if attrs is None:
             return self.__dict__
-        if not isinstance(attrs, list) or not all(isinstance(i, str) for i in attrs):
+        if not isinstance(attrs, list):
             return self.__dict__
-        return {key: value for key, value in self.__dict__.items() if key in attrs}
+        if not all(isinstance(i, str) for i in attrs):
+            return self.__dict__
+        return {key: value for key, value in self.__dict__.items()
+                if key in attrs}
 
     def reload_from_json(self, json):
         '''Replaces all attributes of the Student instance.'''
@@ -25,11 +28,12 @@ class Student:
             setattr(self, key, value)
         return self
 
+
 if __name__ == '__main__':
     student = Student("John", "Doe", 20)
-    print(student.to_json())  # {'first_name': 'John', 'last_name': 'Doe', 'age': 20}
-    print(student.to_json(['first_name', 'age']))  # {'first_name': 'John', 'age': 20}
-    print(student.to_json(['middle_name']))  # {'first_name': 'John', 'last_name': 'Doe', 'age': 20}
-    print(student.to_json('first_name'))  # {'first_name': 'John', 'last_name': 'Doe', 'age': 20}
+    print(student.to_json())
+    print(student.to_json(['first_name', 'age']))
+    print(student.to_json(['middle_name']))
+    print(student.to_json('first_name'))
     student.reload_from_json({'first_name': 'Jane', 'age': 22})
-    print(student.to_json())  # {'first_name': 'Jane', 'last_name': 'Doe', 'age': 22}
+    print(student.to_json())
