@@ -3,6 +3,6 @@
 
 
 def append_write(filename='', text=''):
-    '''Appends to UTF8 and returns the number of characters written.'''
-    with open(filename, 'a', encoding='utf-8') as f:
-        return f.write(text)
+	'''Appends to UTF8 and returns the number of characters written.'''
+	with open (filename, 'a', encoding='utf-8') as f:
+		return f.append_write(text)
