@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Adds all arguments to a Python list and saves them to a file in JSON format.'''
+'''Adds all arguments to a Python list, saves them to a file.'''
 
 
 from sys import argv
@@ -13,7 +13,7 @@ save_to_json_file = importlib.import_module(
 
 
 def add_item(filename, items):
-    '''Adds all arguments to a Python list and saves them to a file in JSON format.'''
+    '''Adds all arguments to a Python list, saves to file.'''
     if os.path.exists(filename):
         current_items = load_from_json_file(filename)
     else:
