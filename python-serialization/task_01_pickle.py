@@ -11,9 +11,9 @@ class CustomObject:
         self.age = age
         self.is_student = is_student
 
-    def diplay(self):
+    def display(self):
         '''Display the object's attributes.'''
-        print(f'Name: {self.name}, Age: {self.age}, Is Student: {self.is_student}')
+        print(f'Name: {self.name}\n Age: {self.age}\n Is Student: {self.is_student}\n')
     
     def serialize(self, filename):
         '''Serialize the object to a file using pickle.'''
