@@ -8,14 +8,13 @@ def serialize_and_save_to_file(data, filename):
     """Serializes data to JSON and saves it to a file."""
 
 
-    with open(filename, 'w', encoding='utf-8') as f:
+    with open(filename, 'w', encoding="utf-8") as f:
         json.dump(data, f)
 
 
-def load_from_json_file(filename):
+def load_and_deserialize(filename):
     """Loads data from a JSON file and deserializes it."""
 
-
-    with open(filename, 'r', encoding='utf-8') as f:
+    
+    with open(filename, 'r', encoding="utf-8") as f:
         return json.load(f)
-
