@@ -5,13 +5,13 @@
 import csv
 import json
 
-def convert_csv_to_json(csv_file, json_file):
+def convert_csv_to_json(csv_file, json_file=None):
     '''Converts a CSV Data to JSON.'''
 
 
     if json_file is None:
         json_file = csv_file.replace('.csv', '.json')
-        
+
     try:
         with open(csv_file, mode='r', encoding='utf-8') as csvf:
             csv_reader = csv.DictReader(csvf)
