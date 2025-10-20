@@ -1,15 +1,18 @@
 #!/usr/bin/python3
 
 import requests
+import csv
 
 def fetch_and_print_posts():
     url = "https://jsonplaceholder.typicode.com/posts"
     response = requests.get(url)
     
+    print (f'Status code: {response.status_code}')
+
     if response.status_code == 200:
         posts = response.json()
         for post in posts:
-            print(f"Post ID: {post['id']}, Title: {post['title']}")
+            print(post['title'])
     else:
         print(f"Failed to retrieve posts. Status code: {response.status_code}")
 
