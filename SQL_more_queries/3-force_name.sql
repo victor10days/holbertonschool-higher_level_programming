@@ -1,6 +1,6 @@
--- Script that creates table with forced name --
-
+-- Script that creates table with forced name
+--
 CREATE TABLE IF NOT EXISTS force_name (
-    id INT
+    id INT,
     name VARCHAR(256) NOT NULL
 );
