@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Lists all states with a name starting with N """
+""" Displays all values in states table where name matches the argument """
 
 import sys
 import MySQLdb
@@ -13,7 +13,7 @@ if __name__ == "__main__":
         db=sys.argv[3]
     )
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE = '{}' ORDER BY id ASC").format(sys.argv[4])
+    cursor.execute("SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(sys.argv[4]))
     states = cursor.fetchall()
     for state in states:
         print(state)
