@@ -67,4 +67,4 @@ $ ./7-model_state_fetch_all.py root root hbtn_0e_6_usa
 
 Author
 Victor E. Díaz — Holberton School Student, Cohort #27 — Foundations v2.1 - Part 2
-GitHub: https://github.com/TenDays
+GitHub: https://github.com/vicyor10days
