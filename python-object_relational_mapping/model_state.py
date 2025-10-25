@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 '''Module for model state'''
 
 from sqlalchemy import Coumn, Integer, String
