@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Script that lists all State objects from the database hbtn_0e_6_usa
+Script that prints the State object with the name passed as argument
+from the database hbtn_0e_6_usa
 """
 import sys
 from model_state import Base, State
@@ -17,7 +18,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for state in session.query(State).order_by(State.id).all():
-        print("{}: {}".format(state.id, state.name))
+    state = session.query(State).filter(State.name == sys.argv[4]).first()
+    if state:
+        print("{}".format(state.id))
+    else:
+        print("Not found")
 
     session.close()

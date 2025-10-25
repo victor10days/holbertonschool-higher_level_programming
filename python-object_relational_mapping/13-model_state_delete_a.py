@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Script that lists all State objects from the database hbtn_0e_6_usa
+Script that deletes all State objects with a name containing the letter a
+from the database hbtn_0e_6_usa
 """
 import sys
 from model_state import Base, State
@@ -17,7 +18,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for state in session.query(State).order_by(State.id).all():
-        print("{}: {}".format(state.id, state.name))
+    states = session.query(State).filter(State.name.contains('a')).all()
+    for state in states:
+        session.delete(state)
+    session.commit()
 
     session.close()
