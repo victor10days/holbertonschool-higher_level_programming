@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Product Display</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .error {
+            color: red;
+            text-align: center;
+            font-weight: bold;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Product Display</h1>
+    
+    <!-- Check if there's an error message -->
+    {% if error %}
+        <p class="error">Error: {{ error }}</p>
+    
+    <!-- If no error and products exist, display them in a table -->
+    {% elif products %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop through each product -->
+                {% for product in products %}
+                <tr>
+                    <!-- Access dictionary values using dot notation -->
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.category }}</td>
+                    <td>${{ "%.2f"|format(product.price) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    
+    <!-- If no error and no products, show this message -->
+    {% else %}
+        <p style="text-align: center;">No products available</p>
+    {% endif %}
+</body>
+</html>

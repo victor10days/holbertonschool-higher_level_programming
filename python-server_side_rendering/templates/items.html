@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Items List</title>
+</head>
+<body>
+    <h1>Items List</h1>
+    
+    <!-- Jinja IF statement: Check if items list exists and has content -->
+    {% if items %}
+        <!-- If items exist, create an unordered list -->
+        <ul>
+        <!-- Jinja FOR loop: Iterate through each item in the list -->
+        {% for item in items %}
+            <!-- {{ item }} displays the value of the current item -->
+            <li>{{ item }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <!-- If items list is empty or doesn't exist, show this message -->
+        <p>No items found</p>
+    {% endif %}
+</body>
+</html>
